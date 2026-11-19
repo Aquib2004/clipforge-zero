@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 import { Layout, MoreHorizontal, Settings, Play, RefreshCw } from "lucide-react";
+import type { LucideProps } from "lucide-react";
 import Dashboard from "./features/dashboard/Dashboard";
 import Projects from "./features/projects/Projects";
 import SettingsPage from "./features/settings/Settings";
@@ -14,23 +15,28 @@ const NAV = [
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 
-function ActiveNavLink({ href, label, icon: Icon, disabled }: { href: string; label: string; icon: any; disabled?: boolean }) => {
+function navClass(active: boolean, disabled: boolean): string {
+  const base = "flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors";
+  if (disabled) return `${base} text-slate-400`;
+  if (active) return `${base} bg-slate-800 text-slate-100`;
+  return `${base} text-slate-300 hover:bg-slate-800/50 hover:text-slate-100`;
+}
+
+function ActiveNavLink({
+  href,
+  label,
+  icon: Icon,
+  disabled = false,
+}: {
+  href: string;
+  label: string;
+  icon: React.ElementType;
+  disabled?: boolean;
+}) {
   const location = useLocation();
   const isActive = location.pathname === href;
   return (
-    <NavLink
-      to={href}
-      className={({ isActive: active }) =>
-        `flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-          disabled
-            ? "text-slate-400"
-            : active
-              ? "bg-slate-800 text-slate-100"
-              : "text-slate-300 hover:bg-slate-800/50 hover:text-slate-100"
-        }`
-      }
-      disabled={disabled}
-    >
+    <NavLink to={href} className={({ active }: { active: boolean }) => navClass(active, disabled)} disabled={disabled}>
       <Icon size={18} />
       {label}
     </NavLink>
