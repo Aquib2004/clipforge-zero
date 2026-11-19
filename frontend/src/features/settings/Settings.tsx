@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { DiagnosticsResponse } from "../../types";
-import { AlertTriangle, CheckCircle, Cpu, HardDrive, Memory, Shield, Wifi } from "lucide-react";
+import { AlertTriangle, CheckCircle, Cpu, HardDrive, Shield, Wifi } from "lucide-react";
 
 export default function SettingsPage() {
   const [diag, setDiag] = useState<DiagnosticsResponse | null>(null);
@@ -41,7 +41,7 @@ export default function SettingsPage() {
               </div>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
-              <Memory className="w-5 h-5 text-slate-400" />
+              <HardDrive className="w-5 h-5 text-slate-400" />
               <div>
                 <p className="text-sm font-medium">Memory</p>
                 <p className="text-xs slate-text-dim">{diag.memory.percent.toFixed(1)}% used</p>
