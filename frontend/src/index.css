@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+:root {
+  --radius: 0.75rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Obsidian Studio design tokens */
+.slate-surface {
+  background: #0b0c10;
+}
+.slate-layer {
+  background: #111318;
+}
+.slate-card {
+  background: #161a1f;
+  border: 1px solid #232a33;
+}
+.slate-border {
+  border-color: #232a33;
+}
+.slate-text-muted {
+  color: #94a3b8;
+}
+.slate-text-dim {
+  color: #64748b;
+}

@@ -1,0 +1,48 @@
+# --- Secrets: NEVER commit these ---
+.env
+.env.*
+!.env.example
+client_secret*.json
+*.key
+*.pem
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+credentials*.json
+token*.json
+
+# --- Local data / workspace sandbox ---
+data/
+!data/.gitkeep
+*.mp4
+*.mkv
+*.mov
+*.webm
+*.wav
+*.mp3
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# --- Node ---
+node_modules/
+frontend/dist/
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+*.log

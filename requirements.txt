@@ -1,0 +1,14 @@
+﻿# ClipForge Zero — Phase 1 core dependencies
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.3
+pydantic-settings==2.16.3
+cryptography==44.0.0
+keyring==25.5.0
+httpx==0.28.1
+sqlalchemy==2.1.9
+alembic==1.20.1
+psutil==7.2.2
+
+# Phase 2+ dependencies (added when needed):
+# faster-whisper, ctranslate2, opencv-python, mediapipe, yt-dlp, python-multipart
